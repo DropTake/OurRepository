@@ -76,7 +76,7 @@ int cmd_Hello_Dinar(struct cli_def *cli, UNUSED(const char *command), char *argv
     return CLI_OK;
 }
 
- ///
+ /*
 int read_history(struct cli_def *cli, UNUSED(const char *command), UNUSED(char *argv[]), UNUSED(int argc))
 {
    // Переменная, в которую будет помещен указатель на созданный
@@ -130,7 +130,7 @@ int read_history(struct cli_def *cli, UNUSED(const char *command), UNUSED(char *
 
     return CLI_OK;
 }
-///  
+*/ 
 
 int cmd_test(struct cli_def *cli, const char *command, char *argv[], int argc)
 {
@@ -327,10 +327,10 @@ int main()
 
     cli_register_command(cli, c, "regular", cmd_debug_regular, PRIVILEGE_UNPRIVILEGED, MODE_EXEC,
                          "Enable cli_regular() callback debugging");
-///
+/*
 cli_register_command(cli, 0, "read", read_history, PRIVILEGE_UNPRIVILEGED, MODE_ANY,
                         "read cli_history");
-///
+*/
     c = cli_register_command(cli, NULL, "cmd_UNPR_MODE_ANY", cmd_Hello_Dinar, PRIVILEGE_UNPRIVILEGED, MODE_ANY,
                          "Cmd in UNPRIVILEGED MODE_ANY");
     c = cli_register_command(cli, NULL, "cmd_UNPR_MODE_EXEC", cmd_Hello_Dinar, PRIVILEGE_UNPRIVILEGED, MODE_EXEC,
